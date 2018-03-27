@@ -1,0 +1,25 @@
+{
+  "name": "pointyfar-site",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "PointyFar",
+  "license": "MIT",
+  "dependencies": {
+    "gulp-cli": "^2.0.1"
+  },
+  "devDependencies": {
+    "del": "^3.0.0",
+    "event-stream": "^3.3.4",
+    "git-rev-sync": "^1.9.1",
+    "gulp": "gulpjs/gulp#4.0",
+    "gulp-autoprefixer": "^4.0.0",
+    "gulp-concat": "^2.6.1",
+    "gulp-hash": "^4.1.1",
+    "gulp-sass": "^3.1.0",
+    "gulp-string-replace": "^0.4.0",
+    "gulp-util": "^3.0.8",
+    "gulp-zip": "^4.1.0",
+    "minimist": "^1.2.0",
+    "path-exists": "^3.0.0"
+  }
+}

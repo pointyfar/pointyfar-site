@@ -1,0 +1,88 @@
+baseURL = "http://example.org/"
+languageCode = "en-us"
+title = "PointyFar"
+theme = "pointysingle"
+themesDir = "../hugo-themes/"
+# contentDir = "content-food"
+
+pygmentsUseClassic = false
+pygmentsCodeFences = true
+pygmentsCodeFencesGuessSyntax = true
+pygmentsUseClasses = true
+
+
+[params]
+  subtitle = "Adventures in Hugoland"
+  copyright = "Copyright © 2018"
+  author = "Pointy Far"
+  brand = "Pointy's"
+  homeImage = "food/burger.jpeg"
+  
+  footerNotice = "Powered by Hugo. Themed by PointyFar"
+
+[[params.sections]]
+  name = "about"
+  type = "page"
+  enabled = true
+
+[[params.sections]]
+  name = "menu"
+  type = "section"
+  enabled = false
+
+[[params.sections]]
+  name = "gallery"
+  type = "page"
+  enabled = false
+
+[[params.sections]]
+  name = "post"
+  type = "section"
+  enabled = true
+
+[[params.sections]]
+  name = "contact"
+  type = "page"
+  enabled = false
+  
+
+[params.map]
+  enabled = true
+  mapimg = "food/map.jpeg"
+  lat = 37.4220041
+  long = -122.0862515
+  #apikey = "AIzaSyDXM_9QmjOBjpeSW7f31K-0onAxJ9Cp_cI"
+  
+
+[[params.legal]]
+  legalurl = "#"
+  legaltext = "Privacy Policy"
+
+[[params.legal]]
+  legalurl = "#"
+  legaltext = "Terms of Use"
+  
+[[params.legal]]
+  legalurl = "#"
+  legaltext = "Legal Notice 3"
+
+[[params.social]]
+  url = "http://www.twitter.com"
+  icon = "fab fa-twitter"
+
+[[params.social]]
+  url = "http://www.facebook.com"
+  icon = "fab fa-facebook"
+
+[[params.social]]
+  url = "http://www.instagram.com"
+  icon = "fab fa-instagram"
+
+[[params.social]]
+  url = "http://www.tumblr.com"
+  icon = "fab fa-tumblr"
+
+[[params.social]]
+  url = "http://www.github.com"
+  icon = "fab fa-github"
+
