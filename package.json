@@ -5,6 +5,7 @@
   "author": "PointyFar",
   "license": "MIT",
   "dependencies": {
+    "@material/ripple": "^0.33.0",
     "gulp-cli": "^2.0.1"
   },
   "devDependencies": {

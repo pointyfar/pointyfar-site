@@ -2,6 +2,21 @@
 # yarn lockfile v1
 
 
+"@material/base@^0.29.0":
+  version "0.29.0"
+  resolved "https://registry.yarnpkg.com/@material/base/-/base-0.29.0.tgz#5fac94c45907e38c969130e959722288d4ce06b2"
+
+"@material/ripple@^0.33.0":
+  version "0.33.0"
+  resolved "https://registry.yarnpkg.com/@material/ripple/-/ripple-0.33.0.tgz#e94407d4a1ff2359cd0644b221f09de16d31cd50"
+  dependencies:
+    "@material/base" "^0.29.0"
+    "@material/theme" "^0.33.0"
+
+"@material/theme@^0.33.0":
+  version "0.33.0"
+  resolved "https://registry.yarnpkg.com/@material/theme/-/theme-0.33.0.tgz#8d4c5374fc607648c46bcebe40183ff345e2e027"
+
 abbrev@1:
   version "1.1.1"
   resolved "https://registry.yarnpkg.com/abbrev/-/abbrev-1.1.1.tgz#f8f2c887ad10bf67f634f005b6987fed3179aac8"
