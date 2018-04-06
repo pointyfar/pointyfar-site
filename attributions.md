@@ -34,6 +34,12 @@ https://www.pexels.com/photo/bright-cloth-drink-field-267123/
 teacup.jpeg
 https://www.pexels.com/photo/blur-cup-drink-hot-355097/
 
+tea-portrait.jpeg
+https://www.pexels.com/photo/fruit-tea-5798/
+
+tea-flowers.jpeg
+https://www.pexels.com/photo/assorted-flowers-on-container-beside-mug-on-table-52953/
+
 book.jpeg
 https://www.pexels.com/photo/blur-book-book-pages-environment-415061/
 
@@ -62,4 +68,7 @@ mushroom.jpg
 https://www.pexels.com/photo/nature-red-forest-fog-33350/
 
 profile.jpeg
-https://www.pexels.com/photo/blur-book-girl-hands-373465/
+https://www.pexels.com/photo/animal-portrait-cat-animal-portrait-37420/
+
+hero.jpg
+https://www.pexels.com/photo/climate-sea-landscape-nature-35626/
