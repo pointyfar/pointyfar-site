@@ -2,6 +2,7 @@
 title: "Using Material Components for the Web"
 date: 2018-03-28T13:21:38+10:00
 draft: false
+hideGallery: true
 ---
 
 Hello! This post is me documenting how I got [Material Components for the Web](https://material.io/components/web/) working in a Hugo theme. I'm sure there are better-written posts out there, but I wanted to write this one myself, for myself, because for sure in about a week or so I will have forgotten how exactly I was able to get this done.
