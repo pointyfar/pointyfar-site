@@ -1,0 +1,3 @@
+[submodule "themes/pointyfolio"]
+	path = themes/pointyfolio
+	url = https://github.com/pointyfar/pointyfolio

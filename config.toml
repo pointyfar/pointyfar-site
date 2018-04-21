@@ -1,11 +1,7 @@
 baseURL = "http://example.org/"
 languageCode = "en-us"
 title = "PointyFar"
-<<<<<<< HEAD
-theme = "pointyfolio"
-=======
 theme = "pointyblog"
->>>>>>> 96c7562e8cd5976b16668ec5cff926f58c8dd752
 themesDir = "../pointyfar-themes/"
 # contentDir = "content-food"
 
@@ -38,22 +34,11 @@ sectionPagesMenu = "main"
   copyright = "Copyright © 2018"
   author = "Pointy Far"
   brand = "Pointy's"
-<<<<<<< HEAD
   heroImage = "stock/mushroom.jpg"
-=======
-  heroImage = "stock/beach.jpeg"
->>>>>>> 96c7562e8cd5976b16668ec5cff926f58c8dd752
-  
   footerNotice = "Powered by Hugo. Themed by PointyFar"
-
   mainSections = ["post", "test"]
   bundleCss = "/bundle.css"
   bundleJs = "/bundle.js"
-<<<<<<< HEAD
-  
-  xlistAll = true
-=======
->>>>>>> 96c7562e8cd5976b16668ec5cff926f58c8dd752
 
 [params.highlight]
   enableHighlight = true
@@ -85,8 +70,4 @@ sectionPagesMenu = "main"
 [[params.social]]
   url = "http://www.github.com"
   icon = "fab fa-github"
-<<<<<<< HEAD
   color = "#fff"
-=======
-  color = "#000000"
->>>>>>> 96c7562e8cd5976b16668ec5cff926f58c8dd752
