@@ -7,6 +7,10 @@ hasMath: true
 hasCode: true
 ---
 
+### Important Note 
+
+These notes are specific to **my** Hugo theme and configuration. More of a "Note To Self" braindump instead of tutorial for general use.
+
 ### Some Lorem
 
 Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
@@ -70,6 +74,14 @@ Fabulas quo export vidisse se qui occaecat te ingeniis. Arbitror illustriora qui
 
 
 ### Here be Math
+
+```markdown
+Let `$t \in \Re^+$`and find `$\mathbb{E}[S_t], \mathcal{V}[S_t]$`
+
+$$
+S_t = \int_0^t S(s) dW(s)
+$$
+```
 
 Let `$t \in \Re^+$`and find `$\mathbb{E}[S_t], \mathcal{V}[S_t]$`
 
