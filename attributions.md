@@ -75,5 +75,5 @@ https://www.pexels.com/photo/nature-red-forest-fog-33350/
 profile.jpeg
 https://www.pexels.com/photo/animal-portrait-cat-animal-portrait-37420/
 
-hero.jpg
-https://www.pexels.com/photo/climate-sea-landscape-nature-35626/
+hero.jpeg
+https://www.pexels.com/photo/asphalt-dark-dawn-endless-531321/

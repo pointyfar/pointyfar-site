@@ -1,9 +1,7 @@
 baseURL = "http://example.org/"
 languageCode = "en-us"
 title = "PointyFar"
-theme = "pointyblog"
-themesDir = "../pointyfar-themes/"
-# contentDir = "content-food"
+theme = "pointyfolio"
 
 pygmentsUseClassic = false
 pygmentsCodeFences = true
@@ -11,8 +9,6 @@ pygmentsCodeFencesGuessSyntax = true
 pygmentsUseClasses = true
 
 sectionPagesMenu = "main"
-
-# disqusShortname = "disqusShortname"
 
 [[menu.main]]
     name = "Blog"
