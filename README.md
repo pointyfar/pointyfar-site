@@ -1,3 +1,3 @@
-# PointyFar's Hugo Themes
+# PointyFar's Playground
 
-This is the Hugo site I use for testing my own themes. 
+PointyFar's blog + hugo testing site.
