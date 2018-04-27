@@ -91,4 +91,4 @@ $$
 
 ### Ending with a pretty picture 
 
-{{< image src="/hero.jpg" alt="hero">}}
+{{< image src="/hero.jpeg" alt="hero">}}
