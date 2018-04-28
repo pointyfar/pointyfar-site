@@ -20,7 +20,9 @@
   }
 
   /*** Aesthetics ***/
-
+  section {
+    margin-top: 18px !important;
+  }
   .tf-items-container {
     display: flex;
     flex-direction: row;
@@ -56,6 +58,7 @@
 </head>
 
 <body>
+  {{ partial "filter-nav" . }}
   <section>
   
 <button btn primary full class="acc" onclick="toggleAcc(this)">JS Config and Initialisation</button>

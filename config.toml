@@ -8,7 +8,7 @@ pygmentsCodeFences = true
 pygmentsCodeFencesGuessSyntax = true
 pygmentsUseClasses = true
 
-sectionPagesMenu = "main"
+#sectionPagesMenu = "main"
 
 [[menu.main]]
     name = "Blog"
