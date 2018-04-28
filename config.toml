@@ -33,6 +33,7 @@ sectionPagesMenu = "main"
   heroImage = "hero.jpeg"
   footerNotice = "Powered by Hugo. Themed by PointyFar"
   mainSections = ["post", "test"]
+  filterSections = ["post", "wonderland", "lorem", "looking-glass", "grimm"]
   bundleCss = "/bundle.css"
   bundleJs = "/bundle.js"
 
