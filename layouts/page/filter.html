@@ -71,13 +71,13 @@
 </div>
 
 
-{{ $pages := where .Site.RegularPages "Type" "in" .Site.Params.filterSections }}
-{{ $sections := .Site.Params.filterSections }}
+{{ $pages := where .Site.RegularPages "Type" "in" .Site.Params.mainSections }}
+{{ $sections := .Site.Params.mainSections }}
 
 {{ $.Scratch.Set "authors" (slice ) }}
 {{ $.Scratch.Set "noAuthors" 0 }}
 
-{{ range where .Site.RegularPages "Type" "in" .Site.Params.filterSections }}
+{{ range where .Site.RegularPages "Type" "in" .Site.Params.mainSections }}
   {{ with .Params.author }}
     {{ if eq ( printf "%T" . ) "string"  }}
       {{ if ( not ( in ($.Scratch.Get "authors") . ) ) }}

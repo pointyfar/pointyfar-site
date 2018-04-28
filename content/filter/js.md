@@ -25,7 +25,8 @@ var htfConfig = {
   ],
   showItemClass: "show-item",
   filterItemClass: "tf-filter-item",
-  activeButtonClass: "active"
+  activeButtonClass: "active",
+  counterSelector: "selectedItemCount"
 } 
 var htf = new HugoTagsFilter(htfConfig);
 ```
