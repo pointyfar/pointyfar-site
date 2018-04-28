@@ -3,6 +3,7 @@ title: "CHAPTER III. A Caucus-Race and a Long Tale"
 date: 2017-07-10T10:37:36+10:00
 draft: false
 image: "stock/bird-water.jpeg"
+author: "Lewis Carroll"
 tags: 
   - chapter
   - birds

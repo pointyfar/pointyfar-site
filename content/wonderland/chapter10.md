@@ -7,6 +7,7 @@ image:
     title: "seashore"
   - src: "stock/lobsters.jpeg"
     title: "lobsters"
+author: "Lewis Carroll"
 tags: 
   - chapter
   - mock turtle 

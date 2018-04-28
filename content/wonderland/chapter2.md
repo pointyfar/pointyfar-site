@@ -3,6 +3,7 @@ title: "CHAPTER II. The Pool of Tears"
 date: 2017-04-10T10:37:33+10:00
 draft: false
 image: "stock/lake.jpeg"
+author: "Lewis Carroll"
 tags: 
   - chapter
   - rabbit 

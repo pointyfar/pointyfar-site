@@ -3,6 +3,7 @@ title: "CHAPTER V. Advice from a Caterpillar"
 date: 2018-01-10T10:37:41+10:00
 draft: false
 image: "stock/caterpillar.jpeg"
+author: "Lewis Carroll"
 tags: 
   - chapter
   - caterpillar 

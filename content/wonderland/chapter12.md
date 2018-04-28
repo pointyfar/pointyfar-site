@@ -5,6 +5,7 @@ draft: false
 image: 
   - "stock/sitting.jpeg"
   - "stock/hole.jpeg"
+author: "Lewis Carroll"
 tags: 
   - chapter
   - queen of hearts 

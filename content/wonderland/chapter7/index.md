@@ -8,6 +8,7 @@ resources:
 - src: "images/teacup.jpeg"
   name: "tcup"
   title: "Teacup"
+author: "Lewis Carroll"
 tags: 
   - chapter
 ---

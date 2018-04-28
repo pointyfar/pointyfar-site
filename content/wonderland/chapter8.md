@@ -2,6 +2,7 @@
 title: "CHAPTER VIII. The Queen’s Croquet-Ground"
 date: 2018-02-20T21:23:31+10:00
 draft: false
+author: "Lewis Carroll"
 tags: 
   - chapter
   - roses 
