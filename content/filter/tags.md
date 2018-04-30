@@ -5,7 +5,7 @@
 </button>
 {{ range $tags }}
   {{ if .Term }}
-    <button xx class="tag-button" id="tag-{{.Term | urlize}}" onclick="htf.checkFilter('{{.Term | urlize}}', 'tag-')">
+    <button xx class="tag-button" id="tag-{{ .Term | replaceRE "[.]" "_" | urlize }}" onclick="htf.checkFilter('{{ .Term | replaceRE "[.]" "_" | urlize }}', 'tag-')">
       <span>{{.Term | humanize | title }}</span>
       <span> ({{.Count}})</span>
     </button>
@@ -15,6 +15,10 @@
 <button xx class="tag-button" id="tag-tfuntagged" onclick="htf.checkFilter('tfuntagged', 'tag-')">
   Untagged ({{ $.Scratch.Get "untagged" }})
 </button>
+{{ end }}
+
+{{ with .Resources.GetMatch "tags.md" }}
+{{ partial "accordion.html" (dict "panelLabel" "Show: Tag Buttons" "panelContent" .Content )}}
 {{ end }}
 
 ```

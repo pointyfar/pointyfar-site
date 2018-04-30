@@ -1,4 +1,4 @@
-(in addition to [bare.css](http://barecss.com/))
+This demo uses the following styles (in addition to [bare.css](http://barecss.com/))
 
 ```css
 /*** Important ***/

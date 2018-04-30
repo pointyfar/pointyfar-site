@@ -1,3 +1,5 @@
+Initialize HTF, passing an optional config object. This demo uses the following:
+
 ```js
 var htfConfig = {
   filters: [
@@ -29,4 +31,39 @@ var htfConfig = {
   counterSelector: "selectedItemCount"
 } 
 var htf = new HugoTagsFilter(htfConfig);
+```
+
+- `filters` : array of config for each filter set. Each config object needs:
+    - `name` : filter identifier
+    - `prefix` : Each term toggler button needs to be assigned a unique ID. The prefix is used to identify terms belonging to the same filter set, e.g. `tags-post`, `tags-weather`, `tags-random` are tag filters, `sect-post`, `sect-documentation` are section filters.
+    - `buttonClass` : Class attribute applied to button togglers. Must start with the prefix.
+    - `allSelector` : Selector for the `Select All X` button.
+    - `attrName` : Data attribute name to use to identify items.
+- `showItemClass` : class to apply to items to signify that they should be visible.
+- `filterItemClass` : class applied to items to indicate that it is included in items to be filtered.
+- `activeButtonClass` : class to apply to button toggler to signify active status 
+- `counterSelector`: optional selector for element to display count of items displayed.
+  
+  
+You can use as many filter categories as needed.
+  
+Tags and section filters are configured by default. If no config object is passed in initialising HTF, the following will be used: 
+
+```js
+var defaultFilters = [
+  {
+    name: 'tag',
+    prefix: 'tft-',
+    buttonClass: 'tft-button',
+    allSelector: '#tfSelectAllTags',
+    attrName: 'data-tags'
+  },
+  {
+    name: 'section',
+    prefix: 'tfs-',
+    buttonClass: 'tfs-button',
+    allSelector: '#tfSelectAllSections',
+    attrName: 'data-section'
+  }
+]
 ```
