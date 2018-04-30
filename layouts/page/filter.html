@@ -51,6 +51,26 @@
       overflow: hidden;
       transition: max-height 0.2s ease-out;
   }
+  
+  .acc:after {
+    content: '\02795';
+    color: #fff;
+    margin-left: 5px;
+  }
+
+  .acc.active:after {
+      content: "\2796";
+  }
+  
+  .navbtn {
+    padding: 0.5rem!important;
+    font-size: 90%!important;
+    
+  }
+  .nava {
+    text-transform: none;
+    font-size: 90%!important;
+  }
   </style>
   
   {{ .Hugo.Generator }}
@@ -58,17 +78,20 @@
 </head>
 
 <body>
-  {{ partial "filter-nav" . }}
-  <section>
-  
-<button btn primary full class="acc" onclick="toggleAcc(this)">JS Config and Initialisation</button>
-<div class="panel">
-  {{ with .Resources.GetMatch "js.md" }}{{ .Content }}{{ end }}
-</div>
-<button btn primary full class="acc" onclick="toggleAcc(this)">Styles Used</button>
-<div class="panel">
-  {{ with .Resources.GetMatch "styles.md" }}{{ .Content }}{{ end }}
-</div>
+{{ partial "filter-nav" . }}
+<section>
+
+{{ with .Resources.GetMatch "intro.md" }}
+{{ partial "accordion.html" (dict "panelLabel" "Initial Steps" "panelContent" .Content )}}
+{{ end }}
+
+{{ with .Resources.GetMatch "js.md" }}
+{{ partial "accordion.html" (dict "panelLabel" "JS Config and Initialisation" "panelContent" .Content )}}
+{{ end }}
+
+{{ with .Resources.GetMatch "styles.md" }}
+{{ partial "accordion.html" (dict "panelLabel" "Styles Used" "panelContent" .Content )}}
+{{ end }}
 
 
 {{ $pages := where .Site.RegularPages "Type" "in" .Site.Params.mainSections }}
@@ -102,10 +125,15 @@
 {{ range $pages }}
   {{ with .Params.tags }}{{ else }}{{ $.Scratch.Add "untagged" 1 }}{{ end }}
 {{ end }}
-<button btn primary full class="acc" onclick="toggleAcc(this)">Assemble Filter Sets</button>
-<div class="panel">
-  {{ with .Resources.GetMatch "ranges.md" }}{{ .Content }}{{ end }}
-</div>
+
+{{ with .Resources.GetMatch "ranges.md" }}
+{{ partial "accordion.html" (dict "panelLabel" "Assemble Filter Sets" "panelContent" .Content )}}
+{{ end }}
+
+{{ with .Resources.GetMatch "buttons.md" }}
+{{ partial "accordion.html" (dict "panelLabel" "Buttons" "panelContent" .Content )}}
+{{ end }}
+
 
 <hr >
 
@@ -120,10 +148,11 @@
         {{ . | title }}
       </button>
     {{ end }}
-    <button btn primary full class="acc" onclick="toggleAcc(this)">Section Buttons</button>
-    <div class="panel">
-      {{ with .Resources.GetMatch "section.md" }}{{ .Content }}{{ end }}
-    </div>
+    
+    {{ with .Resources.GetMatch "section.md" }}
+    {{ partial "accordion.html" (dict "panelLabel" "Section Buttons" "panelContent" .Content )}}
+    {{ end }}
+    
     
     <hr>
     
@@ -132,7 +161,7 @@
       All Authors
     </button>
     {{ range $.Scratch.Get "authors" }}
-      <button xx class="auth-button" id="auth-{{ . | urlize }}" onclick="htf.checkFilter('{{ . | urlize }}', 'auth-')">
+      <button xx class="auth-button" id="auth-{{ . | replaceRE "[.]" "_" | urlize }}" onclick="htf.checkFilter('{{ . | replaceRE "[.]" "_" | urlize }}', 'auth-')">
         {{ . }}
       </button>
     {{ end }}
@@ -142,10 +171,9 @@
     </button>
     {{ end }}
     
-    <button btn primary full class="acc" onclick="toggleAcc(this)">Author Buttons</button>
-    <div class="panel">
-      {{ with .Resources.GetMatch "authors.md" }}{{ .Content }}{{ end }}
-    </div>
+    {{ with .Resources.GetMatch "authors.md" }}
+    {{ partial "accordion.html" (dict "panelLabel" "Author Buttons" "panelContent" .Content )}}
+    {{ end }}
     
     
     <hr>
@@ -156,7 +184,7 @@
     </button>
     {{ range $tags }}
       {{ if .Term }}
-        <button xx class="tag-button" id="tag-{{.Term | urlize}}" onclick="htf.checkFilter('{{.Term | urlize}}', 'tag-')">
+        <button xx class="tag-button" id="tag-{{ .Term | replaceRE "[.]" "_" | urlize }}" onclick="htf.checkFilter('{{ .Term | replaceRE "[.]" "_" | urlize }}', 'tag-')">
           <span>{{.Term | humanize | title }}</span>
           <span> ({{.Count}})</span>
         </button>
@@ -168,33 +196,32 @@
     </button>
     {{ end }}
     
-    <button btn primary full class="acc" onclick="toggleAcc(this)">Tag Buttons</button>
-    <div class="panel">
-      {{ with .Resources.GetMatch "tags.md" }}{{ .Content }}{{ end }}
-    </div>
+    {{ with .Resources.GetMatch "tags.md" }}
+    {{ partial "accordion.html" (dict "panelLabel" "Tag Buttons" "panelContent" .Content )}}
+    {{ end }}
+    
     
     <hr >
   </div>
       
     
-      
-  <button btn primary full class="acc" onclick="toggleAcc(this)">Assemble Items</button>
-  <div class="panel">
-    {{ with .Resources.GetMatch "items.md" }}{{ .Content }}{{ end }}
-  </div>
+  {{ with .Resources.GetMatch "items.md" }}
+  {{ partial "accordion.html" (dict "panelLabel" "Assemble Items" "panelContent" .Content )}}
+  {{ end }}
+  
   <hr >
   <div><h2><span id="selectedItemCount"></span> Items</h2></div>
   <div class="tf-items-container">      
   {{ range $pages.ByPublishDate.Reverse }}
     <div  class="tf-filter-item tf-item" 
-          data-tags="{{ with .Params.tags }}{{ range . }}{{ . | urlize }} {{ end }}{{ else }} tfuntagged{{ end }}"
+          data-tags="{{ with .Params.tags }}{{ range . }}{{ . | replaceRE "[.]" "_" | urlize }} {{ end }}{{ else }} tfuntagged{{ end }}"
           data-section="{{ .Section }}"
           
-          data-authors="{{ with .Params.author }}{{ if eq ( printf "%T" . ) "string" }}{{.|urlize}}{{ else if eq ( printf "%T" . ) "[]string" }}{{ range . }}{{.|urlize}} {{end}}{{end}}{{else}}no-author{{end}}"
+          data-authors="{{ with .Params.author }}{{ if eq ( printf "%T" . ) "string" }}{{ . | replaceRE "[.]" "_" | urlize }}{{ else if eq ( printf "%T" . ) "[]string" }}{{ range . }}{{ . | replaceRE "[.]" "_" | urlize }} {{end}}{{end}}{{else}}no-author{{end}}"
           
           >
       <h6>{{.Section}}</h6>
-      <h5>{{ with .Params.author }}{{ if eq ( printf "%T" . ) "string" }}{{.|humanize}}{{ else if eq ( printf "%T" . ) "[]string" }}{{ range . }}{{.|urlize}} {{end}}{{end}}{{else}}No Author{{end}}</h5>
+      <h5>{{ with .Params.author }}{{ if eq ( printf "%T" . ) "string" }}{{.|humanize|title}}{{ else if eq ( printf "%T" . ) "[]string" }}{{ range . }}{{.|humanize|title}} {{end}}{{end}}{{else}}No Author{{end}}</h5>
       
       <h4><a href="{{ .RelPermalink }}">{{ .Title }}</a></h4>
       
