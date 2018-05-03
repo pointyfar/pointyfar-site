@@ -24,6 +24,12 @@ pygmentsUseClasses = true
     identifier = "tags"
     url = "/tags/"
     
+#[[menu.main]]
+#    name = "Contact"
+#    title = "Contact PointyFar"
+#    weight = 130
+#    identifier = "contact"
+#    url = "/contact/"
     
 [params]
   subtitle = "Adventures in Hugoland"

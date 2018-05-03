@@ -1,0 +1,41 @@
+{{ define "main" }}
+{{ with .Site.Data.comments }}
+x{{ . }}x
+{{ end }}
+<form netlify name="comments-queue" action="/thanks">
+  <div class="px-container">
+    <div class="section--center mdl-grid mdl-shadow--4dp px-container">
+      <div class="mdl-cell mdl-cell--6-col mdl-typography--text-center">
+        <input name="path" type="hidden" value="{{ .Permalink }}">
+        <div class="mdl-textfield mdl-js-textfield" id="name-container">
+          <input class="mdl-textfield__input" type="text" id="name">
+          <label class="mdl-textfield__label" for="name">Display Name</label>
+        </div>
+        <div class="mdl-tooltip" data-mdl-for="colour">
+          I use these instead of personally identifiable data
+        </div>
+        <div class="mdl-textfield mdl-js-textfield">
+          <input class="mdl-textfield__input" type="text" id="colour">
+          <label class="mdl-textfield__label" for="colour">Your Favourite Colour</label>
+        </div>
+        <div class="mdl-tooltip" data-mdl-for="animal">
+          I use these instead of personally identifiable data
+        </div>
+        <div class="mdl-textfield mdl-js-textfield">
+          <input class="mdl-textfield__input" type="text" id="animal">
+          <label class="mdl-textfield__label" for="animal">Your Favourite Animal</label>
+        </div>
+      </div>
+      <div class="mdl-cell mdl-cell--6-col mdl-typography--text-center">
+        <div class="mdl-textfield mdl-js-textfield">
+          <textarea class="mdl-textfield__input" type="text" rows="3" id="message"></textarea>
+          <label class="mdl-textfield__label" for="message">Your Comment</label>
+        </div>
+        <button type="submit" class="mdl-button mdl-js-button">
+          Post Your Comment
+        </button>
+      </div>
+    </div>
+  </div>
+</form>
+{{ end }}
