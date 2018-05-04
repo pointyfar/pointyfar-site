@@ -5,7 +5,7 @@
   "license": "MIT",
   "scripts": {
     "build": "gulp get:comments && yarn run build:functions && hugo",
-    "build:functions": "netlify-lambda build lambda"
+    "build:functions": "netlify-lambda build 'lambda'"
   },
   "dependencies": {
     "@material/ripple": "^0.33.0",
