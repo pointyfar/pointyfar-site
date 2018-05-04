@@ -4,22 +4,12 @@
   "author": "PointyFar",
   "license": "MIT",
   "scripts": {
-    "build": "gulp get:comments && yarn run build:functions && hugo",
-    "build:functions": "netlify-lambda build lambda"
+    "build": "yarn run clean && hugo",
+    "clean": "rimraf public"
   },
   "dependencies": {
-    "@material/ripple": "^0.33.0",
-    "gulp-cli": "^2.0.1"
   },
   "devDependencies": {
-    "dotenv": "^5.0.1",
-    "gulp": "^3.9.1",
-    "gulp-clean": "^0.4.0",
-    "gulp-concat": "^2.6.1",
-    "gulp-serve": "^1.4.0",
-    "gulp-shell": "^0.6.5",
-    "netlify-lambda": "^0.2.0",
-    "request": "^2.85.0",
-    "run-sequence": "^2.2.1"
+    "rimraf": "^2.6.2"
   }
 }
