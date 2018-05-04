@@ -100,6 +100,7 @@ gulp.task('check-init', function () {
         saveInitStatus(initStatus);
       } else {
         console.log("Couldn't detect a APPROVED_FORM from the API");
+        console.log(err, response);
       }
     });
   } else {
