@@ -22,7 +22,7 @@ export function handler(event, context, callback) {
       {
         "fallback": "New comment on the comment example site",
         "color": "#444",
-        "author_name": body.data.email,
+        "author_name": body.data.name,
         "title": body.data.path,
         "title_link": process.env.URL + body.data.path,
         "text": body.data.comment

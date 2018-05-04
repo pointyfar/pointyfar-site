@@ -1,5 +1,5 @@
 [build]
-  Functions = "functions"
+  functions = "lambda"
   command = "yarn run build"
   publish = "public"
   NODE_ENV = "8.9.0"
