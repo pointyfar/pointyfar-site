@@ -4,7 +4,7 @@
   "author": "PointyFar",
   "license": "MIT",
   "scripts": {
-    "build": "yarn run build:functions && hugo",
+    "build": "gulp get:comments && yarn run build:functions && hugo",
     "build:functions": "netlify-lambda build lambda"
   },
   "dependencies": {

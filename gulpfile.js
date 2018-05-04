@@ -2,6 +2,17 @@ var gulp        = require("gulp");
 var request     = require("request");
 var fs          = require('fs');
 
+
+
+
+/*
+  what goes where?
+*/
+var buildSrc = ".";
+var buildDest = "public";
+
+
+
 gulp.task("get:comments", function () {
 
   var url = `https://api.netlify.com/api/v1/forms/${process.env.APPROVED_COMMENTS_FORM_ID}/submissions/?access_token=${process.env.API_AUTH}`;
@@ -46,3 +57,97 @@ gulp.task("get:comments", function () {
     }
   });
 });
+
+
+
+
+
+/*
+  cleanup the build output
+*/
+gulp.task('clean-build', function () {
+  return gulp.src(buildDest, {read: false})
+    .pipe(clean());
+});
+
+
+
+/*
+  local webserver for development
+*/
+gulp.task('serve', serve({
+  root: [buildDest],
+  port: 8008,
+}));
+
+
+/*
+  Check if we need to help the developer setup the Netlify environment variables
+*/
+gulp.task('check-init', function () {
+
+  // Look for the environment variables
+  if(process.env.APPROVED_COMMENTS_FORM_ID && process.env.API_AUTH && process.env.SLACK_WEBHOOK_URL && process.env.URL ) {
+
+    // Automatically detect and set the comments queue form environment variable.
+    var siteDomain = process.env.URL.split("://")[1];
+    var url = `https://api.netlify.com/api/v1/sites/${siteDomain}/forms/?access_token=${process.env.API_AUTH}`;
+
+    // REFACTOR: do this conditionally.. not for every build after envs are init'd
+    request(url, function(err, response, body){
+      if(!err && response.statusCode === 200){
+        var body = JSON.parse(body);
+        var approvedForm = body.filter(function(f){
+          return f.name == 'approved-comments';
+        });
+        var initStatus = {
+          'environment' : true,
+          'approved_form_id' : approvedForm[0].id,
+          'rootURL' :  process.env.URL,
+          'siteName' : siteDomain.replace('.netlify.com', '')
+        };
+        saveInitStatus(initStatus);
+      } else {
+        console.log("Couldn't detect a APPROVED_FORM from the API");
+      }
+    });
+  } else {
+    var initStatus = {"environment" : false};
+    saveInitStatus(initStatus);
+  }
+
+});
+
+
+
+/*
+  save the status of our environment somewhere that our SSG can access it
+*/
+function saveInitStatus(initStatus) {
+  fs.writeFile(buildSrc + "/data/init.json", JSON.stringify(initStatus), function(err) {
+    if(err) {
+      console.log(err);
+    }
+  });
+}
+
+
+/*
+  Watch src folder for changes
+*/
+gulp.task("watch", function () {
+  gulp.watch(buildSrc + "/**/*", ["build:local"])
+});
+
+
+
+/*
+  Let's build this sucker for production
+*/
+gulp.task('build', function(callback) {
+  runSequence(
+    ['clean-build','check-init', 'get:comments'],
+    callback
+  );
+});
+
