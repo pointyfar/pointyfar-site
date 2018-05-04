@@ -54,6 +54,7 @@ gulp.task("get:comments", function () {
 
     } else {
       console.log("Couldn't get comments from Netlify");
+      console.log(err, response);
     }
   });
 });
