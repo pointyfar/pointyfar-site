@@ -73,15 +73,6 @@ gulp.task('clean-build', function () {
 
 
 /*
-  local webserver for development
-*/
-gulp.task('serve', serve({
-  root: [buildDest],
-  port: 8008,
-}));
-
-
-/*
   Check if we need to help the developer setup the Netlify environment variables
 */
 gulp.task('check-init', function () {
