@@ -9,4 +9,14 @@ For each filter set you want to use, generate buttons (or your preferred element
 - Add a 'Select All x' button as well. 
   - Set `onclick="htf.showAll('x')"`
   - Assign an id matching the configured `allSelector`
+  
+- If you want to keep a counter of 
+  - all items with that filter 
+  - all selected items with that filter 
+  
+  you also need to add a containing element inside the button (see examples)
+  
+  ```go-html-template
+  <span id="ssect-{{ . | urlize }}"> -count-</span>
+  ```
 

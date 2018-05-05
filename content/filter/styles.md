@@ -10,6 +10,11 @@ button.active {
   background-color: #ddd;
 }
 
+button.disable-button {
+  border-style: dashed;
+  pointer-events: none;
+}
+
 .show-item {
   display: inline-block;
   /* or whatever display style is appropriate 

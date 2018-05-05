@@ -8,27 +8,35 @@ var htfConfig = {
       prefix: 'sect-',
       buttonClass: 'sect-button',
       allSelector: '#selectAllSections',
-      attrName: 'data-section'
+      attrName: 'data-section',
+      selectedPrefix: 'ssect-',
+      countPrefix: 'csect-'
     },
     {
       name: 'tags',
       prefix: 'tag-',
       buttonClass: 'tag-button',
       allSelector: '#selectAllTags',
-      attrName: 'data-tags'
+      attrName: 'data-tags',
+      selectedPrefix: 'stags-',
+      countPrefix: 'ctags-'
     },
     {
       name: 'authors',
       prefix: 'auth-',
       buttonClass: 'auth-button',
       allSelector: '#selectAllAuthors',
-      attrName: 'data-authors'
+      attrName: 'data-authors',
+      selectedPrefix: 'sauth-',
+      countPrefix: 'cauth-'
     }
   ],
   showItemClass: "show-item",
   filterItemClass: "tf-filter-item",
   activeButtonClass: "active",
-  counterSelector: "selectedItemCount"
+  counterSelector: "selectedItemCount",
+  populateCount: true,
+  setDisabledButtonClass: "disable-button"
 } 
 var htf = new HugoTagsFilter(htfConfig);
 ```
@@ -39,10 +47,14 @@ var htf = new HugoTagsFilter(htfConfig);
     - `buttonClass` : Class attribute applied to button togglers. Must start with the prefix.
     - `allSelector` : Selector for the `Select All X` button.
     - `attrName` : Data attribute name to use to identify items.
+    - `selectedPrefix` : Specify prefix to use to identify the element containing a count of items selected by the tag.
+    - `countPrefix` : Specify prefix to use to identify the element containing a count of all items with tag.
 - `showItemClass` : class to apply to items to signify that they should be visible.
 - `filterItemClass` : class applied to items to indicate that it is included in items to be filtered.
 - `activeButtonClass` : class to apply to button toggler to signify active status 
 - `counterSelector`: optional selector for element to display count of items displayed.
+- `populateCount`: set to true if you want to keep a counter of tags and items associated. Must define `selectedPrefix` or `countPrefix` on each filter item.
+- `setDisabledButtonClass`: Specify a class name to denote disabled button, e.g. when there are no items displayed that have the button's tag.
   
   
 You can use as many filter categories as needed.
