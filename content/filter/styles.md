@@ -12,7 +12,6 @@ button.active {
 
 button.disable-button {
   border-style: dashed;
-  pointer-events: none;
 }
 
 .show-item {
