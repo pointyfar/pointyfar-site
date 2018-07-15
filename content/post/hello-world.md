@@ -47,7 +47,7 @@ gantt
 
 ... will render as below: 
 
-{{< mermaid >}}
+{{</* mermaid */>}}
 gantt
         dateFormat  YYYY-MM-DD
         title Adding GANTT diagram functionality to mermaid
@@ -63,7 +63,7 @@ gantt
         Future task in critical line        :crit, 5d
         Create tests for renderer           :2d
         Add to mermaid                      :1d
-{{< /mermaid >}}
+{{</* /mermaid */>}}
 
 ### More Lorem 
 

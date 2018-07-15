@@ -1,7 +1,8 @@
 baseURL = "https://pointy.netlify.com/"
 languageCode = "en-us"
 title = "PointyFar"
-theme = "pointyfolio"
+#theme = "pointyfolio"
+theme = "pointybubl"
 
 pygmentsUseClassic = false
 pygmentsCodeFences = true
@@ -28,7 +29,7 @@ pygmentsUseClasses = true
 [params]
   subtitle = "Adventures in Hugoland"
   copyright = "Copyright © 2018"
-  author = "Pointy Far"
+#  author = "Pointy Far"
   brand = "Pointy's"
   heroImage = "hero.jpeg"
   footerNotice = "Powered by Hugo. Themed by PointyFar"
@@ -37,6 +38,27 @@ pygmentsUseClasses = true
   bundleCss = "/bundle.css"
   bundleJs = "/bundle.js"
 
+[params.hero]
+  #background = "img/hero-background.jpeg"
+  background = "img/hero-background-dark.jpeg"
+  #background = "img/hero-background-light.jpeg"
+  bgislight = false
+
+[params.author]
+  name = "Pointy Far"
+  short = "Pointy"
+  photo = "img/hello.jpeg"
+  header = "Howdy!"
+  blurb = " This is params author blurb. Configure me! \
+            Possumus quorum aliqua aut anim ut eiusmod exquisitaque ut consequat. \
+            O id sempiternum, voluptate quo ingeniis. \
+            Duis ab et nulla incurreret, litteris qui possumus."
+  aboutSection = "/about/"
+[params.subnav]
+  usetaxonomy = "tags"
+  taxonomycount = 3
+  featuredterms = ["queen"]
+  
 [params.highlight]
   enableHighlight = true
   highlightCSS = "<link href=\"/css/chroma.css\" rel=\"stylesheet\">"

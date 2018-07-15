@@ -1,12 +1,37 @@
 {{ define "main" }}
-{{ with .Site.Data.comments }}
-<script>
-console.log(.)
-</script>
-x{{ . }}x
-{{ end }}
+<div class="px-container">
+
+<form action="https://docs.google.com/forms/d/e/1FAIpQLSfIGn6_0lzYjMLVALt-C_H5lRcb8Zksrk1OsdpAYu-FeMgZKw/formResponse" target="_self" method="POST" id="mG61Hd">
+  
+  <input type="text"
+    name="entry.1345957044" value="name" required dir="auto" data-initial-dir="auto"
+    data-initial-value="" />
+
+  <input type="text"
+    name="entry.1218189866" value="one" required dir="auto" data-initial-dir="auto"
+    data-initial-value="" />
+
+  <input type="text"
+    name="entry.2057002597" value="two" required dir="auto" data-initial-dir="auto"
+    data-initial-value="" />
+
+  <textarea required 
+    name="entry.1026916283" dir="auto"
+    data-initial-dir="auto" data-initial-value="" aria-describedby="i.desc.2001324455 i.err.2001324455"></textarea>
+
+  <input type="hidden" name="entry.1156100281" jsname="L9xHkb">
+
+  <input type="hidden" name="fvv" value="1">
+  <input type="hidden" name="draftResponse" value="[null,null,&quot;-999203401960685335&quot;]">
+  <input type="hidden" name="pageHistory" value="0">
+  <input type="hidden" name="fbzx" value="-999203401960685335">
+  <button type="submit" class="mdl-button mdl-js-button">
+    Post Your Comment
+  </button>
+
+</form>
+
 <form netlify name="comments-queue" action="/thanks">
-  <div class="px-container">
     <div class="section--center mdl-grid mdl-shadow--4dp px-container">
       <div class="mdl-cell mdl-cell--6-col mdl-typography--text-center">
         <input name="path" type="hidden" value="{{ .Permalink }}">
