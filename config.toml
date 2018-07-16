@@ -37,6 +37,10 @@ pygmentsUseClasses = true
   mainSections = ["post", "wonderland", "lorem", "looking-glass", "grimm"]
   bundleCss = "/bundle.css"
   bundleJs = "/bundle.js"
+  
+  # for bubl:
+  usePipes = false
+  themePath = "/themes/pointybubl"
 
 [params.hero]
   #background = "img/hero-background.jpeg"
